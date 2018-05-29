@@ -24,10 +24,10 @@ Pod::Spec.new do |s|
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = <<-DESC
-  Implementation of UITextVIew with adjustable spacing between text lines. 
-  Current approach doesn't use NSAttributedString, so you are free to customize you text 
-  as it is simple UITextView.
+  s.description  = <<-DESC 
+  	UITextView with adjustable spacing between text lines. 
+  	Current implementation doesn't use NSAttributedString (you will be able to apply any attributes to your text as you wish), 
+  	it is based on NSLayoutManagerDelegate which defines padding after each line and NSTextStorageDelegate which adjusts input caret sizes.
                    DESC
 
   s.homepage     = "https://github.com/greenfrvr/stretchy-text-view"
@@ -41,8 +41,7 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  # s.license      = "MIT (example)"
-  s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  s.license      = { :type => "MIT", :file => "LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -66,8 +65,8 @@ Pod::Spec.new do |s|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  s.platform     = :ios
-  # s.platform     = :ios, "10.0"
+  s.platform     = :ios, "8.0"
+  # s.platform     = :ios, "5.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -132,6 +131,7 @@ Pod::Spec.new do |s|
   #  where they will only apply to your library. If you depend on other Podspecs
   #  you can include multiple dependencies to ensure it works.
 
+s.swift_version = '4.0'
   # s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
