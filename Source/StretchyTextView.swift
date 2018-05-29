@@ -8,9 +8,12 @@
 
 import UIKit
 
+/**
+UITextView which can adjust spacing between lines. Spacing value is defined by `lineSpacing`, default value is `0.0`.
+*/
 public class StretchyTextView: UITextView {
     
-    @IBInspectable public var lineSpacing: CGFloat = 4.0 {
+    @IBInspectable public var lineSpacing: CGFloat = 0.0 {
         didSet {
             if lineSpacing < 0 {
                 lineSpacing = 0
@@ -33,7 +36,7 @@ public class StretchyTextView: UITextView {
         return rect
     }
     
-    public func invalidateLayout() {
+    private func invalidateLayout() {
         let loc = offset(from: beginningOfDocument, to: beginningOfDocument)
         let length = offset(from: beginningOfDocument, to: endOfDocument)
         
